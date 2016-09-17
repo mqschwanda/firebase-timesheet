@@ -1,3 +1,12 @@
-body{
-  /*background-color: black;*/
+.glyphicon-padding {
+  padding-right: .5em;
+}
+
+.glyphicons-user-structure {
+  width: 14px;
+  height: 16px;
+}
+
+th>.glyphicons-user-structure {
+  margin-right: .5em;
 }

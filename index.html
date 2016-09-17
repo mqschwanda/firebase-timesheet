@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Timesheet</title>
-  <link rel="stylesheet" type="text/css" href="./assets/stylesheets/styles.css">
+  
     <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./assets/stylesheets/styles.css">
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <!-- Firebase Reference -->
@@ -16,7 +17,6 @@
 </head>
 <body>
 <div class="container">
-  
   <div class="jumbotron">
     <h1 class="text-center">Employee Data Managment</h1>
     <h3 class="text-center">A Comprehensive Directory of Employee Billable Hours</h3>
@@ -26,16 +26,16 @@
     <div class="panel-heading">
       <h4>Current Employees</h4>
     </div>
-    <div class="panel-body">
-    <table class="table table-hover table-striped table-responsive" id='employeeTable'>
+    <div class="panel-body table-responsive">
+    <table class="table table-hover table-striped text-center" id='employeeTable'>
             <thead>
               <tr>
-                <th>Employee Name</th>
-                <th>Role</th>
-                <th>Start Date</th>
-                <th>Months Worked</th>
-                <th>Monthly Rate ($)</th>
-                <th>Total Billed ($)</th>
+                <th class="text-center"><span class="glyphicon glyphicon-user glyphicon-padding" aria-hidden="true"></span>Employee Name</th>
+                <th class="text-center"><img class="glyphicons-user-structure" src="assets/images/glyphicons-user-structure.png"></img>Role</th>
+                <th class="text-center"><span class="glyphicon glyphicon-calendar glyphicon-padding" aria-hidden="true"></span>Start Date</th>
+                <th class="text-center"><span class="glyphicon glyphicon-time glyphicon-padding" aria-hidden="true"></span>Months Worked</th>
+                <th class="text-center"><span class="glyphicon glyphicon-usd glyphicon-padding" aria-hidden="true"></span>Monthly Rate</th>
+                <th class="text-center"><img class="glyphicons-user-structure" src="assets/images/glyphicons-calculator.png"></img>Total Billed</th>
               </tr>
             </thead>
             <tbody>
@@ -49,32 +49,45 @@
       <h4>Add Employee</h4>
     </div>
     <div class="panel-body">
-      <form>
-        <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-6">
           <div class="form-group">
-            <label for=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Employee Name</label>
-            <input type="text" class="form-control" id="employeeNameInput" placeholder="John Smith">
+            <label for=""></span>Employee Name:</label>
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
+              </span>
+              <input type="text" class="form-control" id="employeeNameInput" placeholder="John Smith">
+            </div><!-- /input-group -->
+            <label for=""></span>Role:</label>
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default " type="button"><img class="glyphicons-user-structure" src="assets/images/glyphicons-user-structure.png"></img></button>
+              </span>
+              <input type="text" class="form-control" id="roleInput" placeholder="Vice President">
+            </div><!-- /input-group -->
           </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
           <div class="form-group">
-            <label for=""><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Role</label>
-            <input type="text" class="form-control" id="roleInput" placeholder="Vice President">
+            <label for=""></span>Start Date:</label>
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+              </span>
+              <input type="text" class="form-control" id="startDateInput" placeholder="DD/MM/YY">
+            </div>
+            <label for=""></span>Monthly Rate:</label>
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></button>
+              </span>
+              <input type="text" class="form-control" id="monthlyRateInput" placeholder="1,000,000">
+            </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-          <div class="form-group">
-            <label for=""><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Start Date</label>
-            <input type="text" class="form-control" id="startDateInput" placeholder="DD/MM/YY">
-          </div>
-          <div class="form-group">
-            <label for=""><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>Monthly Rate</label>
-            <input type="text" class="form-control" id="monthlyRateInput" placeholder="1000">
-          </div>
-        </div>
-        <button type="submit" class="btn btn-default btn-block" id="submitBtn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Submit</button>
-      </form>
+      </div>
+      <button type="submit" class="btn btn-default btn-block" id="submitBtn"><span class="glyphicon glyphicon-plus glyphicon-padding" aria-hidden="true"></span>Submit</button>
     </div>
   </div>
-
 </div>
 
 
